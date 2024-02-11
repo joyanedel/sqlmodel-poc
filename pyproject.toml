@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "sqlmodel_poc"
+version = "0.1.0"
+description = "Prove of Concept with SQLModel"
+authors = ["joyanedel <joyanede@alumnos.inf.utfsm.cl>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+run_poc = "scripts.main:run"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sqlmodel = "^0.0.14"
+pydantic = "^2.6.1"
+mypy = "^1.8.0"
+monkeytype = "^23.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+ruff = "^0.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.format]
+quote-style = "double"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+exclude = ["*.pyi"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
